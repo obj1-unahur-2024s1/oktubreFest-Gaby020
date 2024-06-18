@@ -1,0 +1,12 @@
+import marcas.*
+import jarras.*
+import personas.*
+
+describe "test etapa 1"{
+	
+	const marca1 = new MarcaDeRoja(cantidadLupulo = 8, ) 
+	
+	method initialize(){
+		
+	}
+}

@@ -1,0 +1,32 @@
+import personas.*
+import marcas.*
+
+describe "test requerimientos parte 1" {
+	const hofbrau = new Roja(lupulo = 0.08, origen = "Alemana")
+	
+	const jarraDeHofbrau = new Jarra(capacidadJarra = 1.2, marca = hofbrau)
+	
+	const personaAlemana = new Aleman(peso = 80, musicaTradicional = true, aguante = 8, nacionalidad = "Alemania")
+	
+	test "jarra de hofbrau tiene 0.04 litros de alcohol" {
+		assert.equals(0.06, jarraDeHofbrau.contenidoAlcohol())
+	} 
+	
+	test "total de alcohol de una persona" {
+		personaAlemana.comprarCerveza(jarraDeHofbrau)
+		personaAlemana.comprarCerveza(jarraDeHofbrau)
+		
+		assert.equals(0.12, personaAlemana.totalAlcohol())
+	}
+	
+	test "persona está hebria" {
+		personaAlemana.comprarCerveza(jarraDeHofbrau)
+		personaAlemana.comprarCerveza(jarraDeHofbrau)
+		
+		assert.that(personaAlemana.estaEbria())
+	}
+	
+	test "le gusta la cerveza" {
+		assert.that(personaAlemana.leGusta(hofbrau))
+	}
+}
